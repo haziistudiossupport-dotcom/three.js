@@ -1,0 +1,33 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;background:#888}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"../three/build/three.module.js","three/addons/":"../three/examples/jsm/"}}</script></head>
+<body><script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { HDRLoader } from 'three/addons/loaders/HDRLoader.js';
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
+const q = new URLSearchParams(location.search);
+const files = (q.get('m')||'Soldier.glb').split(',');
+const renderer = new THREE.WebGLRenderer({antialias:true, preserveDrawingBuffer:true});
+renderer.setSize(innerWidth, innerHeight); renderer.toneMapping = THREE.AgXToneMapping; renderer.shadowMap.enabled = true;
+document.body.appendChild(renderer.domElement);
+const scene = new THREE.Scene(); scene.background = new THREE.Color(0xb8bcc2);
+const cam = new THREE.PerspectiveCamera(30, innerWidth/innerHeight, 0.1, 100);
+const hdr = await new HDRLoader().loadAsync('../three/examples/textures/equirectangular/venice_sunset_1k.hdr');
+hdr.mapping = THREE.EquirectangularReflectionMapping; scene.environment = hdr;
+const sun = new THREE.DirectionalLight(0xffffff, 2); sun.position.set(3,5,4); sun.castShadow = true; scene.add(sun);
+const ground = new THREE.Mesh(new THREE.PlaneGeometry(20,20), new THREE.MeshStandardMaterial({color:0x999999})); ground.rotation.x=-Math.PI/2; ground.receiveShadow=true; scene.add(ground);
+const loader = new GLTFLoader(); const dl = new DRACOLoader(); dl.setDecoderPath('../three/examples/jsm/libs/draco/gltf/'); loader.setDRACOLoader(dl);
+let x = -(files.length-1)*0.5;
+const info = [];
+for (const f of files) {
+  const g = await loader.loadAsync('../three/examples/models/gltf/'+f);
+  const o = g.scene; o.traverse(c=>{ if(c.isMesh){c.castShadow=true;} });
+  const box = new THREE.Box3().setFromObject(o); const h = box.max.y-box.min.y;
+  const s = 1.75/h; o.scale.setScalar(s); o.position.x = x; o.position.y = -box.min.y*s; x += 1.0;
+  if (q.get('rot')) o.rotation.y = parseFloat(q.get('rot'));
+  scene.add(o); info.push([f, h.toFixed(2)]);
+}
+cam.position.set(0, 1.5, 6 + files.length*0.6); cam.lookAt(0, 0.95, 0);
+renderer.render(scene, cam);
+document.title = 'done ' + JSON.stringify(info);
+</script></body></html>

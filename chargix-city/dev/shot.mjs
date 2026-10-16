@@ -1,0 +1,12 @@
+import { chromium } from '/opt/node22/lib/node_modules/playwright/index.mjs';
+const [,, url, out, w='1280', h='720', wait='done'] = process.argv;
+const browser = await chromium.launch({ args: ['--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader','--ignore-gpu-blocklist'] });
+const page = await browser.newPage({ viewport: { width: +w, height: +h } });
+page.on('console', m => console.log('console:', m.text()));
+page.on('pageerror', e => { console.log('pageerror:', e.message); });
+await page.goto(url);
+await page.waitForFunction(w => document.title.startsWith(w), wait, { timeout: +(process.env.T||110000) }).catch(e=>console.log('timeout', e.message));
+console.log('title:', await page.title());
+await page.waitForTimeout(+(process.env.SETTLE||1200));
+await page.screenshot({ path: out });
+await browser.close();

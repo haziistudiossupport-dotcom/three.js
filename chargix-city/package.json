@@ -1,0 +1,12 @@
+{
+  "name": "chargix-city",
+  "private": true,
+  "description": "CHARGIX scroll-driven 3D city for Shopify",
+  "scripts": {
+    "build": "node dev/build.mjs && node dev/make-theme.mjs"
+  },
+  "devDependencies": {
+    "@gltf-transform/cli": "4.2.1",
+    "esbuild": "0.25.10"
+  }
+}
