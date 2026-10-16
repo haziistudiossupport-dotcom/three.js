@@ -1,0 +1,480 @@
+{
+  "sections": {
+    "city": {
+      "type": "cx-city",
+      "settings": {}
+    },
+    "packages": {
+      "type": "cx-packages",
+      "blocks": {
+        "package1": {
+          "type": "package",
+          "settings": {
+            "product": "essential-website",
+            "name": "Essential Website",
+            "for": "For freelancers, service providers and first businesses.",
+            "fallback_price": "$750",
+            "timeline": "~10 business days",
+            "revisions": "2 revision rounds",
+            "features": "Up to 5 pages (Home + 4)\nPremium Shopify theme customised to your brand (theme licence paid by you)\nUp to 10 products or services set up\nContact form and essential Shopify setup\nMobile optimisation and launch testing\n30-min recorded handover video",
+            "fine": "14 days of post-launch fixes included.",
+            "kind": "A polished, premium website"
+          }
+        },
+        "package2": {
+          "type": "package",
+          "settings": {
+            "product": "3d-experience-website",
+            "name": "3D Experience",
+            "for": "For brands that need to stand out.",
+            "fallback_price": "$1,650",
+            "timeline": "3–4 weeks",
+            "revisions": "3 revision rounds",
+            "features": "Up to 8 pages incl. 1 custom landing page\nCustom visual direction and motion design\n1 real interactive 3D scene (WebGL) with mobile fallback\nUp to 20 products or services set up\nFull Shopify setup: payments, shipping zones, tax basics, branded emails\nPerformance optimisation\n45-min live handover call + video",
+            "fine": "30 days of post-launch fixes included.",
+            "kind": "Website + a real interactive 3D scene",
+            "badge": "Signature",
+            "featured": true
+          }
+        },
+        "package3": {
+          "type": "package",
+          "settings": {
+            "product": "business-launch",
+            "name": "Business Launch",
+            "for": "For founders who want it done end to end.",
+            "fallback_price": "$2,750",
+            "timeline": "4–5 weeks",
+            "revisions": "3 revision rounds",
+            "features": "Everything in 3D Experience\nUp to 10 pages incl. 2 custom landing pages\nUp to 40 products with descriptions written for you\nLogo refresh and mini brand guide\nInstagram, Facebook and TikTok business setup\nMeta Pixel, TikTok Pixel and 1 ad campaign draft\nSpanish versions of key pages\nUS and Mexico markets, policy pages drafted from your info\n2 × 45-min training calls + video",
+            "fine": "30 days of post-launch fixes included. Ad spend and ongoing ad management are not.",
+            "kind": "3D site + the whole commercial setup"
+          }
+        }
+      },
+      "block_order": [
+        "package1",
+        "package2",
+        "package3"
+      ],
+      "settings": {}
+    },
+    "compare": {
+      "type": "cx-compare",
+      "blocks": {
+        "row1": {
+          "type": "row",
+          "settings": {
+            "label": "Pages",
+            "a": "Up to 5",
+            "b": "Up to 8",
+            "c": "Up to 10"
+          }
+        },
+        "row2": {
+          "type": "row",
+          "settings": {
+            "label": "Custom landing pages",
+            "a": "no",
+            "b": "1",
+            "c": "2"
+          }
+        },
+        "row3": {
+          "type": "row",
+          "settings": {
+            "label": "Products / services set up",
+            "a": "10",
+            "b": "20",
+            "c": "40"
+          }
+        },
+        "row4": {
+          "type": "row",
+          "settings": {
+            "label": "Product descriptions written",
+            "a": "no",
+            "b": "no",
+            "c": "yes"
+          }
+        },
+        "row5": {
+          "type": "row",
+          "settings": {
+            "label": "Images prepared",
+            "a": "20",
+            "b": "40",
+            "c": "80"
+          }
+        },
+        "row6": {
+          "type": "row",
+          "settings": {
+            "label": "Interactive 3D scene",
+            "a": "no",
+            "b": "yes",
+            "c": "yes"
+          }
+        },
+        "row7": {
+          "type": "row",
+          "settings": {
+            "label": "Motion design",
+            "a": "no",
+            "b": "yes",
+            "c": "yes"
+          }
+        },
+        "row8": {
+          "type": "row",
+          "settings": {
+            "label": "Shopify payments, shipping, emails",
+            "a": "Basic (1 shipping zone)",
+            "b": "Full",
+            "c": "Full + US/MX markets"
+          }
+        },
+        "row9": {
+          "type": "row",
+          "settings": {
+            "label": "Policy pages filled from your info",
+            "a": "no",
+            "b": "no",
+            "c": "yes"
+          }
+        },
+        "row10": {
+          "type": "row",
+          "settings": {
+            "label": "Logo refresh + mini brand guide",
+            "a": "no",
+            "b": "no",
+            "c": "yes"
+          }
+        },
+        "row11": {
+          "type": "row",
+          "settings": {
+            "label": "Social + Meta/TikTok pixel setup",
+            "a": "no",
+            "b": "no",
+            "c": "yes"
+          }
+        },
+        "row12": {
+          "type": "row",
+          "settings": {
+            "label": "Spanish versions of key pages",
+            "a": "no",
+            "b": "no",
+            "c": "yes"
+          }
+        },
+        "row13": {
+          "type": "row",
+          "settings": {
+            "label": "Revision rounds",
+            "a": "2",
+            "b": "3",
+            "c": "3"
+          }
+        },
+        "row14": {
+          "type": "row",
+          "settings": {
+            "label": "Training",
+            "a": "30-min video",
+            "b": "45-min call + video",
+            "c": "2 × 45-min calls + video"
+          }
+        },
+        "row15": {
+          "type": "row",
+          "settings": {
+            "label": "Post-launch fixes",
+            "a": "14 days",
+            "b": "30 days",
+            "c": "30 days"
+          }
+        },
+        "row16": {
+          "type": "row",
+          "settings": {
+            "label": "Timeline after form + files",
+            "a": "~10 business days",
+            "b": "3–4 weeks",
+            "c": "4–5 weeks"
+          }
+        }
+      },
+      "block_order": [
+        "row1",
+        "row2",
+        "row3",
+        "row4",
+        "row5",
+        "row6",
+        "row7",
+        "row8",
+        "row9",
+        "row10",
+        "row11",
+        "row12",
+        "row13",
+        "row14",
+        "row15",
+        "row16"
+      ],
+      "settings": {
+        "note": "Not included in any package: your Shopify plan, domain, premium theme licence, paid apps, photography, ad spend, ongoing ad management, custom apps."
+      }
+    },
+    "process": {
+      "type": "cx-process",
+      "blocks": {
+        "step1": {
+          "type": "step",
+          "settings": {
+            "title": "Choose & pay",
+            "time": "Day 0",
+            "text": "Pick a package and pay securely at checkout. You get an order email straight away with a link to your project form."
+          }
+        },
+        "step2": {
+          "type": "step",
+          "settings": {
+            "title": "Project form",
+            "time": "~10 minutes",
+            "text": "Tell us about your business, style and pages, and share your logo and photos. Your timeline starts when this is complete."
+          }
+        },
+        "step3": {
+          "type": "step",
+          "settings": {
+            "title": "Design",
+            "time": "First days",
+            "text": "We send a design direction for your homepage. You give feedback in one consolidated round."
+          }
+        },
+        "step4": {
+          "type": "step",
+          "settings": {
+            "title": "Build & set up",
+            "time": "By package",
+            "text": "We build every page, set up products, payments and shipping, and test on phones, tablets and desktops. About 10 business days for Essential, 3–4 weeks for 3D Experience, 4–5 weeks for Business Launch."
+          }
+        },
+        "step5": {
+          "type": "step",
+          "settings": {
+            "title": "Review & launch",
+            "time": "Last days",
+            "text": "You review, we apply your revisions, then we launch together and hand over with training."
+          }
+        }
+      },
+      "block_order": [
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5"
+      ],
+      "settings": {
+        "text": "A simple, written process. You always know what happens next and what we need from you.",
+        "heading": "From checkout <em>to opening day.</em>"
+      }
+    },
+    "care": {
+      "type": "cx-care",
+      "blocks": {
+        "plan1": {
+          "type": "plan",
+          "settings": {
+            "name": "Care",
+            "for": "Peace of mind for simple sites.",
+            "price": "$59",
+            "yearly": "or $590/year (2 months free)",
+            "features": "Monthly health check and report\nMobile layout, links and forms tested\nCheckout tested in safe test mode\n30 minutes of edits per month\nReply within 3 business days",
+            "product": "care-plan",
+            "price_year": "$590"
+          }
+        },
+        "plan2": {
+          "type": "plan",
+          "settings": {
+            "name": "Care Plus",
+            "for": "For stores that change often.",
+            "price": "$129",
+            "yearly": "or $1,290/year (2 months free)",
+            "features": "Health checks twice a month\nApp conflicts, SEO and speed checks\n2 hours of edits per month\nUnused hours roll over 1 month\nReply within 1 business day",
+            "product": "care-plan",
+            "price_year": "$1,290",
+            "featured": true
+          }
+        },
+        "plan3": {
+          "type": "plan",
+          "settings": {
+            "name": "Premium Care",
+            "for": "For 3D sites and larger catalogues.",
+            "price": "$249",
+            "yearly": "or $2,490/year (2 months free)",
+            "features": "Weekly health checks\n3D interaction checks on every device\nMonthly conversion review + 20-min call\n4 hours of edits per month\nSame-day reply (4 business hours)",
+            "product": "care-plan",
+            "price_year": "$2,490"
+          }
+        }
+      },
+      "block_order": [
+        "plan1",
+        "plan2",
+        "plan3"
+      ],
+      "settings": {
+        "text": "Optional monthly plans for after your project. Cancel anytime. Shopify handles hosting and security, so you only pay for real human checks and edits.",
+        "note": "Work outside your plan is quoted first at $65/hour. Plans don't include redesigns, new features or ad management.",
+        "num": "C"
+      }
+    },
+    "trust": {
+      "type": "cx-trust",
+      "blocks": {
+        "item1": {
+          "type": "item",
+          "settings": {
+            "title": "Fixed prices",
+            "text": "Published up front. No hourly surprises."
+          }
+        },
+        "item2": {
+          "type": "item",
+          "settings": {
+            "title": "Bilingual",
+            "text": "We build and support in English and Spanish."
+          }
+        },
+        "item3": {
+          "type": "item",
+          "settings": {
+            "title": "You own it",
+            "text": "Your store, domain and content are yours, and every account and licence is in your name."
+          }
+        },
+        "item4": {
+          "type": "item",
+          "settings": {
+            "title": "No passwords",
+            "text": "We work through Shopify collaborator access."
+          }
+        }
+      },
+      "block_order": [
+        "item1",
+        "item2",
+        "item3",
+        "item4"
+      ],
+      "settings": {}
+    },
+    "faq": {
+      "type": "cx-faq",
+      "blocks": {
+        "qa1": {
+          "type": "qa",
+          "settings": {
+            "q": "How do I pay?",
+            "a": "<p>You pay the full package price online at checkout with card, Shop Pay, Apple Pay or Google Pay. Prices are in USD.</p>"
+          }
+        },
+        "qa2": {
+          "type": "qa",
+          "settings": {
+            "q": "When does my project start?",
+            "a": "<p>Right after checkout you get a link to a short project form. Your timeline starts once the form and your files (logo, photos, product info) are in. We confirm your start date within 1 business day.</p>"
+          }
+        },
+        "qa3": {
+          "type": "qa",
+          "settings": {
+            "q": "Do I need a Shopify plan?",
+            "a": "<p>Yes. Your store runs on your own Shopify account and plan, which you pay Shopify for directly. If you don't have one yet, we help you open it. Domains, paid apps and premium themes are also paid by you.</p>"
+          }
+        },
+        "qa4": {
+          "type": "qa",
+          "settings": {
+            "q": "What counts as a revision round?",
+            "a": "<p>One consolidated list of changes on the current design. A completely new direction is a new project. Extra rounds can be added at our hourly rate.</p>"
+          }
+        },
+        "qa5": {
+          "type": "qa",
+          "settings": {
+            "q": "Is the 3D real?",
+            "a": "<p>Yes. The 3D Experience package includes a real-time WebGL scene that visitors can interact with, plus a lightweight fallback for older phones so the site stays fast.</p>"
+          }
+        },
+        "qa6": {
+          "type": "qa",
+          "settings": {
+            "q": "Can you guarantee sales?",
+            "a": "<p>No one honestly can. We build a fast, trustworthy, properly configured store and help you prepare marketing. Results depend on your product, pricing and promotion.</p>"
+          }
+        },
+        "qa7": {
+          "type": "qa",
+          "settings": {
+            "q": "Do you run my ads?",
+            "a": "<p>Business Launch includes setting up your Instagram, Facebook and TikTok business profiles, connecting the Meta and TikTok pixels and preparing one ad campaign draft (not launched). Running ads and the ad budget are separate.</p>"
+          }
+        },
+        "qa8": {
+          "type": "qa",
+          "settings": {
+            "q": "Do you work in Spanish?",
+            "a": "<p>Sí. We work with clients in the US and México in English or Spanish. Business Launch includes Spanish versions of key pages.</p>"
+          }
+        },
+        "qa9": {
+          "type": "qa",
+          "settings": {
+            "q": "What is your refund policy?",
+            "a": "<p>Full refund before you submit the project form, 50% refund after the form and before we deliver the first design, and no refund after the first design is delivered. Full details are on our refund policy page.</p>"
+          }
+        },
+        "qa10": {
+          "type": "qa",
+          "settings": {
+            "q": "What happens after launch?",
+            "a": "<p>Every package includes free post-launch fixes (14 or 30 days). After that you can add a monthly Care plan for checks, edits and support, or contact us when you need something.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "qa1",
+        "qa2",
+        "qa3",
+        "qa4",
+        "qa5",
+        "qa6",
+        "qa7",
+        "qa8",
+        "qa9",
+        "qa10"
+      ],
+      "settings": {
+        "text": "Can't find your answer? Message us before you buy and we'll reply within 1 business day."
+      }
+    }
+  },
+  "order": [
+    "city",
+    "packages",
+    "compare",
+    "process",
+    "care",
+    "trust",
+    "faq"
+  ]
+}

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    {%- comment -%}
+      Import map first in <head>, before any script, so no module load can race it. "three" points at
+      the same un-versioned URL that the 3D modules also import relatively ('./three.module.min.js'),
+      so both paths resolve to a single copy of the library.
+    {%- endcomment -%}
+    {%- assign cx_asset_base = 'three.module.min.js' | asset_url | split: 'three.module.min.js' | first -%}
+    <script type="importmap">{ "imports": {
+      "three": "{{ cx_asset_base }}three.module.min.js",
+      "three/addons/": "{{ cx_asset_base }}"
+    } }</script>
+    <meta name="theme-color" content="#0a0a0b">
+    <meta name="color-scheme" content="dark">
+    <link rel="canonical" href="{{ canonical_url }}">
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 64, height: 64 }}">
+    {%- else -%}
+      {%- comment -%} The monolith: an obsidian tile, a bone slab, one vertical seam of light. {%- endcomment -%}
+      <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='3' fill='%230a0a0b'/%3E%3Cpath d='M10 4h12v25H10z' fill='%23ece8e0'/%3E%3Cpath d='M15.2 11h1.6v18h-1.6z' fill='%23c8a26a'/%3E%3C/svg%3E">
+    {%- endif -%}
+    {%- liquid
+      assign brand = settings.brand_name | default: 'CHARGIX'
+      assign cx_title = page_title
+      if shop.name != blank and shop.name != brand
+        assign cx_title = page_title | replace: shop.name, brand
+      endif
+      if request.page_type == 'index'
+        assign cx_title = brand | append: ' – Shopify websites and 3D experiences, built to be entered'
+      endif
+    -%}
+    <title>
+      {{ cx_title }}
+      {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+      {%- unless cx_title contains brand %} &ndash; {{ brand }}{% endunless -%}
+    </title>
+    {%- if page_description -%}
+      <meta name="description" content="{{ page_description | escape }}">
+    {%- elsif settings.default_description != blank -%}
+      <meta name="description" content="{{ settings.default_description | escape }}">
+    {%- endif -%}
+    {% render 'cx-meta' %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&display=swap">
+    {{ 'identity.css' | asset_url | stylesheet_tag }}
+    {{ 'identity-sections.css' | asset_url | stylesheet_tag }}
+    {{ 'mono.css' | asset_url | stylesheet_tag }}
+    {%- liquid
+      assign c_brass = settings.color_accent | append: '' | downcase
+      assign c_day = settings.color_accent_2 | append: '' | downcase
+      assign c_steel = settings.color_accent_3 | append: '' | downcase
+      assign c_css = ''
+      if c_brass != blank and c_brass != '#c8a26a'
+        assign c_css = c_css | append: '--brass:' | append: c_brass | append: ';'
+      endif
+      if c_day != blank and c_day != '#fff4de'
+        assign c_css = c_css | append: '--daylight:' | append: c_day | append: ';'
+      endif
+      if c_steel != blank and c_steel != '#a9afb6'
+        assign c_css = c_css | append: '--steel:' | append: c_steel | append: ';'
+      endif
+    -%}
+    {%- if c_css != blank -%}<style>:root{ {{ c_css }} }</style>{%- endif -%}
+    <script>
+      document.documentElement.classList.replace('no-js', 'js');
+      // If nothing reports ready (window.__cxReady), show everything anyway.
+      setTimeout(function () { if (!window.__cxReady) document.documentElement.classList.add('cx-failsafe'); }, 6000);
+    </script>
+    <script src="{{ 'gsap.min.js' | asset_url }}" defer></script>
+    <script src="{{ 'gsap-scrolltrigger.min.js' | asset_url }}" defer></script>
+    <script src="{{ 'studio.js' | asset_url }}" defer></script>
+    {{ content_for_header }}
+  </head>
+  <body class="template-{{ template.name }}{% if template.suffix %} template-{{ template.name }}-{{ template.suffix }}{% endif %}">
+    {%- comment -%} The home page opens with the CHARGIX city section (sections/cx-city.liquid), which loads its own 3D. {%- endcomment -%}
+    <a class="skip-link" href="#MainContent">Skip to content</a>
+    <div class="grain" aria-hidden="true"></div>
+    {% sections 'header-group' %}
+    <main id="MainContent" tabindex="-1">
+      {{ content_for_layout }}
+    </main>
+    {% sections 'footer-group' %}
+  </body>
+</html>
