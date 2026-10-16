@@ -178,7 +178,9 @@ export async function start(root) {
     for (const ph of Object.values(phones)) {
       let on = world.night > 0.02;
       for (let o = ph.phone; o && on; o = o.parent) on = o.visible;
-      ph.glow.intensity = on ? 0.045 * world.night : 0;
+      ph.glow.intensity = on ? 0.015 * world.night : 0;
+      // keep the screen under the night bloom threshold so it reads as a screen, not a lamp
+      ph.phone.userData.screen.material.color.setScalar(1 - 0.55 * world.night);
       if (on) {
         const scr = ph.phone.userData.screen;
         scr.getWorldPosition(ph.glow.position);
